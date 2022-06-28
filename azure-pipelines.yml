@@ -26,11 +26,11 @@ stages:
           npm install azure-pipelines-task-lib --save
     - task: DownloadSecureFile@1
       inputs:
-        secureFile: _env
+        secureFile: .env
     - task: CopyFiles@2
       inputs:
         SourceFolder: '$(Agent.TempDirectory)'
-        Contents: _env
+        Contents: .env
         TargetFolder: '$(Build.SourcesDirectory)'
     - task: CmdLine@2
       displayName: 'npm run dev'
