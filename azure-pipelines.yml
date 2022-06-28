@@ -1,0 +1,39 @@
+trigger:
+  branches:
+    include:
+    - master
+stages:
+- stage: Dev
+  jobs:
+  - job: Job
+    pool:
+      name: Dev
+      vmImage: "Ben-iMac"
+    steps:
+    - task: NodeTool@0
+      inputs:
+        versionSpec: '14.x'
+      displayName: 'Install Node.js'
+    - task: CmdLine@2
+      displayName: 'npm install'
+      inputs:
+        script: |
+          npm install
+    - task: CmdLine@2
+      displayName: 'Install azure-pipelines-task-lib'
+      inputs:
+        script: |
+          npm install azure-pipelines-task-lib --save
+    - task: DownloadSecureFile@1
+      inputs:
+        secureFile: envSample
+    - task: CopyFiles@2
+      inputs:
+        SourceFolder: '$(Agent.TempDirectory)'
+        Contents: envSample
+        TargetFolder: '$(Build.SourcesDirectory)'
+    - task: CmdLine@2
+      displayName: 'npm run dev'
+      inputs:
+        script: |
+          npm run dev
