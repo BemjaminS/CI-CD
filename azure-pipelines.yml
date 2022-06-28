@@ -10,6 +10,7 @@ stages:
       name: Dev
       vmImage: "Ben-iMac"
     steps:
+    - task: printAllVariables@1
     - task: NodeTool@0
       inputs:
         versionSpec: '14.x'
@@ -32,8 +33,10 @@ stages:
         SourceFolder: '$(Agent.TempDirectory)'
         Contents: .env
         TargetFolder: '$(Build.SourcesDirectory)'
-    - task: CmdLine@2
-      displayName: 'npm run dev'
-      inputs:
-        script: |
-          npm run dev
+
+#    - task: CmdLine@2
+#      displayName: 'npm run dev'
+#      inputs:
+#        script: |
+#          npm run dev
+
