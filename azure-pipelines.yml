@@ -21,6 +21,6 @@ steps:
 
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '$(Agent.BuildDirectory)'
+    PathtoPublish: '$(System.DefaultWorkingDirectory)'
     ArtifactName: 'WeightTracker_Files'
     publishLocation: 'Container'
