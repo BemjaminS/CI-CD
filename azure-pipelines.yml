@@ -19,6 +19,7 @@ steps:
     npm install
   displayName: 'Install App Files'
 - task: Npm@1
+  displayName: 'Publish Package to Feed weightTracker'
   inputs:
     command: 'publish'
     publishRegistry: 'useFeed'
