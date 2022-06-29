@@ -22,6 +22,6 @@ steps:
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Files App > Artifact'
   inputs:
-    PathtoPublish: '$(Build.StagingDirectory)'
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'WeightTracker_Files'
     publishLocation: 'Container'
