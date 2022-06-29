@@ -18,10 +18,8 @@ steps:
 - script: |
     npm install
   displayName: 'Install App Files'
-
-- task: PublishBuildArtifacts@1
-  displayName: 'Publish Files App > Artifact'
+- task: Npm@1
   inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'WeightTracker_Files'
-    publishLocation: 'Container'
+    command: 'publish'
+    publishRegistry: 'useFeed'
+    publishFeed: 'ae8615ac-02b0-435b-9754-21090cf9744f'
