@@ -40,10 +40,11 @@ stages:
 #        script: |
 #          npm run dev
 
-    - task: Npm@1
+    - task: UniversalPackages@0
       inputs:
         command: 'publish'
-        workingDir: '$(build.repository.localpath)'
-        verbose: true
-        publishRegistry: 'useFeed'
-        publishFeed: 'c268ad64-1a53-4f8d-ad59-b90f2c662e01'
+        publishDirectory: '$(Build.ArtifactStagingDirectory)'
+        feedsToUsePublish: 'internal'
+        vstsFeedPublish: 'c268ad64-1a53-4f8d-ad59-b90f2c662e01'
+        vstsFeedPackagePublish: 'weighttrackerarti'
+        versionOption: 'patch'
