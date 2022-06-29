@@ -15,9 +15,13 @@ steps:
     versionSpec: '14.x'
   displayName: 'Install Node.js 14v'
 
+- script: |
+    npm install
+  displayName: 'Install App Files'
+
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Files App > Artifact'
   inputs:
-    PathtoPublish: '$(System.DefaultWorkingDirectory)'
+    PathtoPublish: '$(Build.StagingDirectory)'
     ArtifactName: 'WeightTracker_Files'
     publishLocation: 'Container'
