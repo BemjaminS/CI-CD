@@ -19,9 +19,11 @@ steps:
     npm install
   displayName: 'Install App Files'
 
-- task: Npm@1
+- task: UniversalPackages@0
   inputs:
     command: 'publish'
-    verbose: true
-    publishRegistry: 'useFeed'
-    publishFeed: 'ae8615ac-02b0-435b-9754-21090cf9744f'
+    publishDirectory: '$(Build.ArtifactStagingDirectory)'
+    feedsToUsePublish: 'internal'
+    vstsFeedPublish: 'ae8615ac-02b0-435b-9754-21090cf9744f'
+    vstsFeedPackagePublish: 'weighttrackerartifact'
+    versionOption: 'patch'
