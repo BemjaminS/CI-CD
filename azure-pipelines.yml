@@ -4,27 +4,37 @@ trigger:
 pool:
   name: Default
 
-
 steps:
+# ================ Node v14.x =============================
     - task: NodeTool@0
       inputs:
         versionSpec: '14.x'
       displayName: 'Install Node.js'
+
+# ================ Install App Files =============================
     - task: CmdLine@2
-      displayName: 'npm install'
+      displayName: 'Npm install > Install Application Files'
       inputs:
         script: |
           npm install
-
+# ================ Remove Unneccesery files from Build directory =============================
+    - task: DeleteFiles@1
+      displayName: 'Remove Unneccesery files from Build directory'
+      inputs:
+        SourceFolder: '$(Build.SourcesDirectory)'
+        Contents: 'azure-pipelines.yml'
+# ================ Compress Files Application to ZIP Before Artifact Upload (AppFiles.zip) =============================
     - task: ArchiveFiles@2
+      displayName: 'Compress Files to ZIP (Application Files)'
       inputs:
         rootFolderOrFile: '$(Build.SourcesDirectory)'
         includeRootFolder: false
         archiveType: 'zip'
         archiveFile: '$(Build.ArtifactStagingDirectory)/AppFiles.zip'
         replaceExistingArchive: true
-    
+# ================ Publish Artifact Files > Zip (AppFiles.zip) =============================
     - task: PublishBuildArtifacts@1
+      displayName: 'Publish Zip to Artifact (Application Files)'
       inputs:
         PathtoPublish: '$(Build.ArtifactStagingDirectory)/AppFiles.zip'
         ArtifactName: 'Application'
