@@ -19,11 +19,17 @@ steps:
     npm install
   displayName: 'Install App Files'
 
-- task: UniversalPackages@0
+- task: ArchiveFiles@2
   inputs:
-    command: 'publish'
-    publishDirectory: '$(Build.ArtifactStagingDirectory)'
-    feedsToUsePublish: 'internal'
-    vstsFeedPublish: 'ae8615ac-02b0-435b-9754-21090cf9744f'
-    vstsFeedPackagePublish: 'weighttrackerartifact'
-    versionOption: 'patch'
+    rootFolderOrFile: '$(Build.BinariesDirectory)'
+    includeRootFolder: true
+    archiveType: 'zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/AppFiles.zip'
+    replaceExistingArchive: true
+    
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)/AppFiles.zip'
+    ArtifactName: 'AppFiles'
+    publishLocation: 'Container'
