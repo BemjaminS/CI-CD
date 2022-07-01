@@ -29,7 +29,7 @@ steps:
       inputs:
         rootFolderOrFile: '$(Build.SourcesDirectory)'
         includeRootFolder: false
-        archiveType: 'zip'
+        archiveType: 'tar'
         archiveFile: '$(Build.ArtifactStagingDirectory)/AppFiles.zip'
         replaceExistingArchive: true
 # ================ Publish Artifact Files > Zip (AppFiles.zip) =============================
