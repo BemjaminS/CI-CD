@@ -27,3 +27,9 @@ steps:
     vstsFeedPublish: 'ae8615ac-02b0-435b-9754-21090cf9744f'
     vstsFeedPackagePublish: 'weighttrackerartifact'
     versionOption: 'patch'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
