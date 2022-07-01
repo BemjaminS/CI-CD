@@ -5,11 +5,6 @@ pool:
   name: Default
 
 steps:
-# ================ Node v14.x =============================
-    - task: NodeTool@0
-      inputs:
-        versionSpec: '14.x'
-      displayName: 'Install Node.js'
 
 # ================ Install App Files =============================
     - task: CmdLine@2
