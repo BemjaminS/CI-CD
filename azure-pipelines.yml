@@ -18,8 +18,8 @@ steps:
 
     - task: ArchiveFiles@2
       inputs:
-        rootFolderOrFile: '$(Agent.TempDirectory)/*'
-        includeRootFolder: true
+        rootFolderOrFile: '$(Agent.TempDirectory)'
+        includeRootFolder: false
         archiveType: 'zip'
         archiveFile: '$(Build.ArtifactStagingDirectory)/AppFiles.zip'
         replaceExistingArchive: true
