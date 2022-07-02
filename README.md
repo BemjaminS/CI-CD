@@ -1,3 +1,7 @@
+# Status badge
+
+[![Build Status](https://dev.azure.com/Ben-swisa/Bootcamp-app/_apis/build/status/Bootcamp-app?branchName=main)](https://dev.azure.com/Ben-swisa/Bootcamp-app/_build/latest?definitionId=17&branchName=main)
+
 # Node.js Weight Tracker
 
 ![Demo](docs/build-weight-tracker-app-demo.gif)
