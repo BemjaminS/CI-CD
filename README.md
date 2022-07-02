@@ -16,7 +16,6 @@ Run test to check if The project is functioning properly.
 CD - Continuous Deployment - Deploy the project to PRODUCTION enviroment,
 after Manualy approvel OR Pull-Request Aprrovel.
     
-
     
 # Node.js Weight Tracker
 
