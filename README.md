@@ -12,15 +12,16 @@
 
 This project deploy two environments [**Staging** , **Production**] in CI/CD
 
-CI - Continuous integration, publish an artifact on every commit on the source code
+CI - Continuous integration, publish an artifact on every commit on the source code OR pull request
+Trigger the Staging Release.
 
 CD - Continuous Delivery, use the artifact to Build the environment for **staging**
 , Run test to check if The project is functioning properly. 
-Deploy after pull-request
+
+Deploy to production Only with Manual approval.
 
 
-CD - Continuous Deployment - Deploy the project to PRODUCTION environment,
-after Manual approval.
+
     
 
 # Staging & Production
@@ -34,10 +35,10 @@ after Manual approval.
    * Create file .env
    * install pm2 
    
-
 - Create variable.yml
    * example of Demo var -> [Here](https://github.com/BemjaminS/Terraform-Ansible/tree/main/Ansible)
 
+# Result:
 
 
     
