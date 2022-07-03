@@ -15,8 +15,7 @@ This project deploy two environments [**Staging** , **Production**] in CI/CD
 CI - Continuous integration, publish an artifact on every commit on the source code
 
 CD - Continuous Delivery, use the artifact to Build the environment for **staging**
-, Run test to check if The project is functioning properly.
- 
+, Run test to check if The project is functioning properly. 
 Deploy after pull-request
 
 
@@ -26,7 +25,7 @@ after Manual approval.
 
 # Staging & Production
 ## using ansible tasks:
-1. Create playbook.yml:
+- Create playbook.yml:
    * Include vars
    * Update & upgrade machine
    * install nodejs
@@ -36,7 +35,7 @@ after Manual approval.
    * install pm2 
    
 
-2. Create variable.yml
+- Create variable.yml
    * example of Demo var -> [Here](https://github.com/BemjaminS/Terraform-Ansible/tree/main/Ansible)
 
 
