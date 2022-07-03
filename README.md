@@ -33,8 +33,9 @@ after Manual approval.
    * Download artifact with the source code
    * Create file .env
    * install pm2 
+   
 
-3. Create variable.yml
+2. Create variable.yml
    * example of Demo var -> [Here](https://github.com/BemjaminS/Terraform-Ansible/tree/main/Ansible)
 
 
