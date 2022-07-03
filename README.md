@@ -39,12 +39,8 @@ Deploy to production Only with Manual approval.
    * example of Demo var -> [Here](https://github.com/BemjaminS/Terraform-Ansible/tree/main/Ansible)
 
 # Result:
+[![Untitled-Notebook-1-1.jpg](https://i.postimg.cc/Gtmjk94q/Untitled-Notebook-1-1.jpg)](https://postimg.cc/LYGfS9B1)
 
-
-    
-# Node.js Weight Tracker
-
-![Demo](docs/build-weight-tracker-app-demo.gif)
 
 
 
